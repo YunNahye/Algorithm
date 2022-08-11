@@ -5,10 +5,10 @@ var lengthOfLongestSubstring = function(s) {
   let start = 0;
   
   [...s].forEach((c, idx) => {
-      if(c in hashMap && start <= hashMap[c]) start = hashMap[c] + 1; //중복 문자 안쪽으로 시작 위치 변경
-      else result = Math.max(result, idx - start + 1); //부분 문자열 길이 비교
-      
-      hashMap[c] = idx; //문자와 인덱스 해시테이블에 저장
+    if(c in hashMap && start <= hashMap[c]) start = hashMap[c] + 1; //중복 문자 안쪽으로 시작 위치 변경
+    else result = Math.max(result, idx - start + 1); //부분 문자열 길이 비교
+    
+    hashMap[c] = idx; //문자와 인덱스 해시테이블에 저장
   });
   
   return result;
